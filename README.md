@@ -5,26 +5,36 @@ A quick library starter for React with Tailwind CSS, Vite, TypeScript and Shadcn
 ## Installation
 
 ```bash
-npm install wavy-ui
+npm install wavyjs
 ```
 
 ## Usage
 
-1. Import the CSS in your app's entry file (e.g., `src/index.tsx` or `src/App.tsx`):
+1. Import and use components:
 
 ```tsx
-import 'wavy-ui/dist/style.css';
+import { useToggle } from 'wavyjs';
+
+function DemoComponent() {
+  const[isOn, toggle] = useToggle();
+  return (
+    <div>
+        <button onClick={toggle}>Click Me</button>
+        <div classname={`h-10 w-10 ${isOn ? 'bg-red-600' : 'bg-white'}`}></div>
+    </div>
+  );
+}
 ```
 
-2. Import and use components:
+2. import DemoComponent in App.js
 
 ```tsx
-import { Button } from 'wavy-ui';
-
-function App() {
-  return (
-    <Button>Click me</Button>
-  );
+functino App() {
+  return(
+    <div>
+        <DemoComponent/>
+    </div>
+  )
 }
 ```
 
