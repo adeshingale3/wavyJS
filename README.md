@@ -1,6 +1,6 @@
-# Wavy UI
+# WavyJS
 
-A quick library starter for React with Tailwind CSS, Vite, TypeScript and Shadcn-ui components.
+NPM Package for React Hooks and UI Components.
 
 ## Installation
 
