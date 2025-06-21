@@ -1,6 +1,6 @@
 {
   "name": "wavyjs",
-  "description": "A quick library starter for React with Tailwind CSS, Vite, TypeScript and Shadcn-ui components.",
+  "description": "A npm package for React hooks and UI Components.",
   "private": false,
   "version": "1.0.0",
   "type": "module",
