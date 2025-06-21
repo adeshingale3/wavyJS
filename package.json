@@ -1,8 +1,8 @@
 {
-  "name": "wavy-ui",
+  "name": "wavyjs",
   "description": "A quick library starter for React with Tailwind CSS, Vite, TypeScript and Shadcn-ui components.",
   "private": false,
-  "version": "1.0.15",
+  "version": "1.0.0",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -19,7 +19,7 @@
   "sass": "dist/style.css",
   "repository": {
     "type": "git",
-    "url": "https://github.com/adeshingale3/wavyui.git"
+    "url": "https://github.com/adeshingale3/wavyJS.git"
   },
   "scripts": {
     "dev": "vite",
@@ -27,6 +27,9 @@
     "build:styles": "postcss ./src/index.css -o ./dist/style.css",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
+  "author": "Adesh Ingale",
+  "license":"MIT",
+  "keywords": ["hooks", "ui components", "wavyjs"],
   "peerDependencies": {
     "autoprefixer": "^10.0.0",
     "postcss": "^8.0.0",
@@ -35,13 +38,11 @@
     "tailwindcss": "^3.0.0 || ^4.0.0"
   },
   "dependencies": {
-    "@heroui/react": "^2.7.10",
-    "@radix-ui/react-avatar": "^1.0.3",
-    "@radix-ui/react-slot": "^1.0.2",
+    
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "lucide-react": "^0.518.0",
-    "shadcn-ui-library-starter": "^1.0.3",
+    
     "tailwind-merge": "^1.12.0",
     "tailwindcss-animate": "^1.0.5"
   },
