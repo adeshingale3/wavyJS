@@ -13,7 +13,8 @@
   "files": [
     "dist",
     "dist/style.css",
-    "dist/index.css"
+    "dist/index.css",
+    "components/cursor/FollowCursor/FollowCursor.css"
   ],
   "style": "dist/style.css",
   "sass": "dist/style.css",
