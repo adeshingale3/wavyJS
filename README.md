@@ -42,19 +42,67 @@ functino App() {
 
 | Hook Name       | Description                                      | Attributes                                                   |
 |-----------------|--------------------------------------------------|--------------------------------------------------------------|
-| [useSessionTimeout](#usesessiontimeout) | Detects and handles session inactivity/timeouts             | `timeout`, `onTimeout`, `isActive`                          |
-| [useHover](#usehover)               | Detects hover state of any DOM element                  | `isHovered`, `hoverRef`                   |
-| [useSpeechSynthesis](#usespeechsynthesis) | Converts text to speech using Web Speech API        | `speak`, `cancel`, `speaking`, `voices`   |
-| [useToggle](#usetoggle)             | Toggles a boolean value easily                          | `value`, `toggle`, `setTrue`, `setFalse`  |
-| [useFetch](#usefetch)               | Handles API requests with built-in loading and error states | `data`, `error`, `loading`, `refetch`     |
+| [useSessionTimeout](#useSessionTimeOut) | Detects and handles session inactivity/timeouts             | `timeout`, `onTimeout`, `isActive`                          |
+| [useHover](#useHover)               | Detects hover state of any DOM element                  | `isHovered`, `hoverRef`                   |
+| [useSpeechSynthesis](#useSpeechSynthesis) | Converts text to speech using Web Speech API        | `speak`, `cancel`, `speaking`, `voices`   |
+| [useToggle](#useToggle)             | Toggles a boolean value easily                          | `value`, `toggle`, `setTrue`, `setFalse`  |
+| [useFetch](#useFetch)               | Handles API requests with built-in loading and error states | `data`, `error`, `loading`, `refetch`     |
 
 ## 🧠 Hook Usage Details
 
 ### 🖱️ useHover
 
-```ts
+```tsx
 const { isHovered, hoverRef } = useHover();
 
 return <div ref={hoverRef}>{isHovered ? "Hovered!" : "Hover me!"}</div>;
+```
+
+###useSpeechSynthesis
+
+```tsx
+const { speak, cancel, speaking, voices } = useSpeechSynthesis();
+
+const handleClick = () => {
+  speak({ text: "Hello, world!", voice: voices[0], rate: 1 });
+};
+```
+
+###useToggle
+
+```tsx
+const { value, toggle, setTrue, setFalse } = useToggle();
+
+return <button onClick={toggle}>{value ? "ON" : "OFF"}</button>;
+
+```
+
+###useFetch
+
+```tsx
+const { data, loading, error, refetch } = useFetch("https://api.example.com/data");
+
+if (loading) return <p>Loading...</p>;
+if (error) return <p>Error occurred</p>;
+
+return (
+  <>
+    <pre>{JSON.stringify(data, null, 2)}</pre>
+    <button onClick={refetch}>Refetch</button>
+  </>
+);
 
 
+```
+
+###useSessionTimeOut
+
+```tsx
+const { isActive } = useSessionTimeout({
+  timeout: 300000, // 5 minutes
+  onTimeout: () => {
+    alert("Session has expired. Logging out...");
+    // Perform logout or redirect
+  },
+});
+```
