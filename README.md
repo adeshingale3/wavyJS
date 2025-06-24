@@ -38,4 +38,23 @@ functino App() {
 }
 ```
 
+## 📦 Available Hooks
+
+| Hook Name       | Description                                      | Attributes                                                   |
+|-----------------|--------------------------------------------------|--------------------------------------------------------------|
+| [useSessionTimeout](#usesessiontimeout) | Detects and handles session inactivity/timeouts             | `timeout`, `onTimeout`, `isActive`                          |
+| [useHover](#usehover)               | Detects hover state of any DOM element                  | `isHovered`, `hoverRef`                   |
+| [useSpeechSynthesis](#usespeechsynthesis) | Converts text to speech using Web Speech API        | `speak`, `cancel`, `speaking`, `voices`   |
+| [useToggle](#usetoggle)             | Toggles a boolean value easily                          | `value`, `toggle`, `setTrue`, `setFalse`  |
+| [useFetch](#usefetch)               | Handles API requests with built-in loading and error states | `data`, `error`, `loading`, `refetch`     |
+
+## 🧠 Hook Usage Details
+
+### 🖱️ useHover
+
+```ts
+const { isHovered, hoverRef } = useHover();
+
+return <div ref={hoverRef}>{isHovered ? "Hovered!" : "Hover me!"}</div>;
+
 
