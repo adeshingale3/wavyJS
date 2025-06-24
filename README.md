@@ -58,7 +58,7 @@ const { isHovered, hoverRef } = useHover();
 return <div ref={hoverRef}>{isHovered ? "Hovered!" : "Hover me!"}</div>;
 ```
 
-###useSpeechSynthesis
+### 🔊 useSpeechSynthesis
 
 ```tsx
 const { speak, cancel, speaking, voices } = useSpeechSynthesis();
@@ -68,16 +68,16 @@ const handleClick = () => {
 };
 ```
 
-###useToggle
+### 🔁 useToggle
 
 ```tsx
-const { value, toggle, setTrue, setFalse } = useToggle();
+const [isOn, toggle] = useToggle();
 
-return <button onClick={toggle}>{value ? "ON" : "OFF"}</button>;
+return <button onClick={toggle}>{isOn ? "ON" : "OFF"}</button>;
 
 ```
 
-###useFetch
+### 📡 useFetch
 
 ```tsx
 const { data, loading, error, refetch } = useFetch("https://api.example.com/data");
@@ -95,7 +95,7 @@ return (
 
 ```
 
-###useSessionTimeOut
+### ⏳ useSessionTimeOut
 
 ```tsx
 const { isActive } = useSessionTimeout({
