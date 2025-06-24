@@ -45,8 +45,8 @@ functino App() {
 | [useSessionTimeout](#useSessionTimeOut) | Detects and handles session inactivity/timeouts             | `timeout`, `onTimeout`, `isActive`                          |
 | [useHover](#useHover)               | Detects hover state of any DOM element                  | `isHovered`, `hoverRef`                   |
 | [useSpeechSynthesis](#useSpeechSynthesis) | Converts text to speech using Web Speech API        | `speak`, `cancel`, `speaking`, `voices`   |
-| [useToggle](#useToggle)             | Toggles a boolean value easily                          | `value`, `toggle`, `setTrue`, `setFalse`  |
-| [useFetch](#useFetch)               | Handles API requests with built-in loading and error states | `data`, `error`, `loading`, `refetch`     |
+| [useToggle](#useToggle)             | Toggles a boolean value easily                          | `value`, `toggle`,   |
+| [useFetch](#useFetch)               | Handles API requests with built-in loading and error states | `data`, `error`, `loading`    |
 
 ## 🧠 Hook Usage Details
 
@@ -80,7 +80,7 @@ return <button onClick={toggle}>{isOn ? "ON" : "OFF"}</button>;
 ### 📡 useFetch
 
 ```tsx
-const { data, loading, error, refetch } = useFetch("https://api.example.com/data");
+const { data, loading, error } = useFetch("https://api.example.com/data");
 
 if (loading) return <p>Loading...</p>;
 if (error) return <p>Error occurred</p>;
@@ -88,7 +88,7 @@ if (error) return <p>Error occurred</p>;
 return (
   <>
     <pre>{JSON.stringify(data, null, 2)}</pre>
-    <button onClick={refetch}>Refetch</button>
+    
   </>
 );
 
