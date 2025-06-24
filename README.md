@@ -42,11 +42,11 @@ functino App() {
 
 | Hook Name       | Description                                      | Attributes                                                   |
 |-----------------|--------------------------------------------------|--------------------------------------------------------------|
-| [useSessionTimeout](#usesessiontimeout) | Detects and handles session inactivity/timeouts             | `timeout`, `onTimeout`, `isActive`                          |
-| [useHover](#usehover)               | Detects hover state of any DOM element                  | `isHovered`, `hoverRef`                   |
-| [useSpeechSynthesis](#usespeechsynthesis) | Converts text to speech using Web Speech API        | `speak`, `cancel`, `speaking`, `voices`   |
-| [useToggle](#usetoggle)             | Toggles a boolean value easily                          | `value`, `toggle`,   |
-| [useFetch](#usefetch)               | Handles API requests with built-in loading and error states | `data`, `error`, `loading`    |
+| [useSessionTimeout](##usesessiontimeout) | Detects and handles session inactivity/timeouts             | `timeout`, `onTimeout`, `isActive`                          |
+| [useHover](##usehover)               | Detects hover state of any DOM element                  | `isHovered`, `hoverRef`                   |
+| [useSpeechSynthesis](##usespeechsynthesis) | Converts text to speech using Web Speech API        | `speak`, `cancel`, `speaking`, `voices`   |
+| [useToggle](##usetoggle)             | Toggles a boolean value easily                          | `value`, `toggle`,   |
+| [useFetch](##usefetch)               | Handles API requests with built-in loading and error states | `data`, `error`, `loading`    |
 
 ## 🧠 Hook Usage Details
 
