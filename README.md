@@ -47,6 +47,7 @@ functino App() {
 | [useSpeechSynthesis](##usespeechsynthesis) | Converts text to speech using Web Speech API        | `speak`, `cancel`, `speaking`, `voices`   |
 | [useToggle](##usetoggle)             | Toggles a boolean value easily                          | `value`, `toggle`,   |
 | [useFetch](##usefetch)               | Handles API requests with built-in loading and error states | `data`, `error`, `loading`    |
+| [useCursor](##usecursor)               | Can access cursor easily, don't need to write extra code to access cursor | `x`, `y`    |
 
 ## 🧠 Hook Usage Details
 
