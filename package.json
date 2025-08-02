@@ -2,7 +2,7 @@
   "name": "wavyjs",
   "description": "A npm package for React hooks and UI Components.",
   "private": false,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
