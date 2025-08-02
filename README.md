@@ -106,3 +106,16 @@ const { isActive } = useSessionTimeout({
   },
 });
 ```
+
+### ⏳ useCursor
+
+```tsx
+const { x, y } = useCursor();
+return (
+  <>
+    <div style={{left: x, top: y}}>
+    </div>
+    
+  </>
+)
+```
