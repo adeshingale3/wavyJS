@@ -13,5 +13,6 @@ export * from './hooks/Toggle';
 
 export * from './components/Fading Patterns';
 export * from './components/Scrolling Patterns';
+export * from './components/Moving Patterns/AnimatedBG'
 
 

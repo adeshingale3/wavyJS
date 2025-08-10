@@ -1,0 +1,2 @@
+export { AnimatedBG } from './AnimatedBG';
+
