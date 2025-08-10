@@ -1,0 +1,69 @@
+{
+  "name": "wavyJS",
+  "version": "0.1.0",
+  "description": "Reusable React + TypeScript component and hooks library with Tailwind, Framer Motion, and GSAP.",
+  "license": "MIT",
+  "author": "Adesh Ingale",
+  "type": "module",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run build && npm run typecheck"
+  },
+  "peerDependencies": {
+    "framer-motion": ">=11.0.0",
+    "gsap": ">=3.12.0",
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "autoprefixer": "^10.4.21",
+    "framer-motion": "^11.18.2",
+    "gsap": "^3.13.0",
+    "postcss": "^8.5.6",
+    "rimraf": "^5.0.10",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.9.2",
+    "vite": "^5.4.19",
+    "vite-plugin-css-injected-by-js": "^3.5.2",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "tailwindcss",
+    "framer-motion",
+    "gsap",
+    "components",
+    "hooks",
+    "library",
+    "vite",
+    "wavyjs",
+    "wavyJS",
+    "wavy"
+  ]
+}

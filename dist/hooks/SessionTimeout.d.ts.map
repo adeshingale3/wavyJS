@@ -1,0 +1,1 @@
+{"version":3,"file":"SessionTimeout.d.ts","sourceRoot":"","sources":["../../src/hooks/SessionTimeout.tsx"],"names":[],"mappings":"AAEA,KAAK,sBAAsB,GAAG;IAC5B,OAAO,EAAE,MAAM,CAAC;IAChB,SAAS,EAAE,MAAM,IAAI,CAAC;IACtB,WAAW,CAAC,EAAE,MAAM,CAAC;IACrB,SAAS,CAAC,EAAE,MAAM,IAAI,CAAC;CACxB,CAAC;AAEF,wBAAgB,iBAAiB,CAAC,EAChC,OAAO,EACP,SAAS,EACT,WAAe,EACf,SAAS,GACV,EAAE,sBAAsB,QAkCxB"}
