@@ -38,7 +38,10 @@ export const FadingBG: React.FC<FadingBGProps> = ({
   }, [animationDuration, rows, cols]);
 
   return (
-<div className="fixed top-0 left-0 z-[-999] bg-black w-screen h-screen overflow-hidden">      <div className="absolute inset-0 z-2 bg-radial from-transparent from-5% to-black" />
+<div className="relative w-full h-full bg-black overflow-hidden">      
+  <div className="absolute inset-0 z-2" style={{
+    background: 'radial-gradient(circle at center, transparent 5%, black 100%)'
+  }} />
       <div
         className="relative z-1 h-full w-full grid"
         style={{

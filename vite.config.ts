@@ -1,7 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
-import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
+// Remove CSS injection plugin to prevent global style conflicts
+// import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 import path from 'path';
 
 export default defineConfig({
@@ -12,7 +13,8 @@ export default defineConfig({
       insertTypesEntry: true,
       tsconfigPath: path.resolve(__dirname, 'tsconfig.json'),
     }),
-    cssInjectedByJsPlugin(),
+    // Remove CSS injection plugin
+    // cssInjectedByJsPlugin(),
   ],
   build: {
     lib: {

@@ -1,6 +1,7 @@
 import gsap from 'gsap'
 import React, { useEffect } from 'react'
-import './MaskedBG.css'
+// Remove CSS import to prevent global style conflicts
+// import './MaskedBG.css'
 
 const MaskedBG = () => {
 useEffect(() => {
@@ -107,8 +108,45 @@ useEffect(() => {
 }, []);
 
 return (
-    <div id="masked-bg-container" className='fixed top-0 left-0 z-[-999] w-screen h-screen overflow-hidden'>
-      <div className="relative w-full h-screen overflow-hidden z-0">
+    <div id="masked-bg-container" className='relative w-full h-full overflow-hidden'>
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          .background {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: black;
+          }
+          .background::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+              to right,
+              rgba(255, 255, 255, 0.1) 0 2px,
+              transparent 2px 50px
+            );
+            -webkit-mask-image:
+              radial-gradient(circle 400px at 10% 80%, black 40%, transparent 100%),
+              radial-gradient(circle 250px at 80% 90%, black 40%, transparent 100%),
+              radial-gradient(circle 400px at 40% 95%, black 40%, transparent 100%),
+              radial-gradient(circle 250px at 60% 80%, black 40%, transparent 100%);
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+          }
+          .background::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+              radial-gradient(circle 400px at 40% 95%, rgba(152, 8, 255, 0.6) 0%, transparent 100%),
+              radial-gradient(circle 250px at 60% 80%, rgba(255, 0, 255, 0.6) 0%, transparent 100%);
+            pointer-events: none;
+          }
+        `
+      }} />
+      <div className="relative w-full h-full overflow-hidden z-0">
         {/* Black background */}
         <div className="background absolute inset-0 bg-black" />
 

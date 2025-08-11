@@ -42,8 +42,8 @@ export const AnimatedBG = () => {
         
     }, [])
   return (
-    <div className='z-[-999] bg-black w-screen h-screen overflow-hidden relative'>
-            <div className="relative w-full h-screen">
+    <div className='w-full h-full bg-black overflow-hidden relative'>
+            <div className="relative w-full h-full">
   <div className="green absolute bg-green-500/40 rounded-full 
                   w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 
                   left-[10%] top-[2%]"/>

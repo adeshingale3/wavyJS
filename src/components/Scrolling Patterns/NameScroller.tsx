@@ -227,7 +227,7 @@ const NameScroller: React.FC<NameScrollerProps> = ({
   ));
 
   return (
-    <div className={`relative z-[-999] w-full h-screen bg-black overflow-hidden flex flex-col justify-center gap-6 md:gap-10 ${className}`}>
+    <div className={`relative w-full h-full bg-black overflow-hidden flex flex-col justify-center gap-6 md:gap-10 ${className}`}>
       {rows}
     </div>
   );
