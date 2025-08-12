@@ -9,4 +9,5 @@ function useToggle(initialValue = false) {
 
   return [value, toggle];
 }
-export {useToggle}
+
+export { useToggle };

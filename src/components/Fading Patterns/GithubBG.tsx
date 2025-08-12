@@ -1,7 +1,7 @@
 import gsap from 'gsap';
 import React, { useEffect, useRef, useState } from 'react'
 
-const GithubBG = () => {
+const GithubBG: React.FC = () => {
     const [boxCount, setBoxCount] = useState(0);
     const boxRefs = useRef<Array<HTMLDivElement | null>>([]);
 
@@ -47,6 +47,7 @@ const GithubBG = () => {
             return () => clearInterval(interval);
         }
     }, [boxCount]);
+    
     const getRandomColor = () => {
         const colors = [
             "rgba(0, 0, 0, 0.5)", // empty
@@ -57,6 +58,7 @@ const GithubBG = () => {
         ];
         return colors[Math.floor(Math.random() * colors.length)];
     }
+    
     return (
         <div className='relative w-full h-full bg-black overflow-hidden'>
             <div className='absolute z-2 h-full w-full' style={{
@@ -68,11 +70,10 @@ const GithubBG = () => {
                         ref={(el) => (boxRefs.current[i] = el)} className="box w-4 h-4 rounded-md" />
                 ))}
             </div>
-
-
-
         </div>
     )
 }
 
-export default GithubBG
+GithubBG.displayName = 'GithubBG';
+
+export default GithubBG;

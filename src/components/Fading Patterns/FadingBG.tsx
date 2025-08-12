@@ -1,59 +1,95 @@
-import React, { useEffect } from 'react';
 import gsap from 'gsap';
+import React, { useEffect, useRef } from 'react';
 
-export interface FadingBGProps {
-  rows?: number;
-  cols?: number;
-  dotSize?: number;
-  dotColor?: string;
-  animationDuration?: number;
-}
+export const FadingBG: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
-export const FadingBG: React.FC<FadingBGProps> = ({
-  rows = 16,
-  cols = 18,
-  dotSize = 8,
-  dotColor = 'bg-white/40',
-  animationDuration = 1.5,
-}) => {
+  // Grid configuration (kept internal for now)
+  const numColumns = 18;
+  const numRows = 16;
+  const totalDots = numColumns * numRows;
+
   useEffect(() => {
-    const boxes = gsap.utils.toArray('.fading-box');
+    if (!containerRef.current) return;
 
-    gsap.fromTo(
-      boxes,
-      { scale: 0, opacity: 0.3 },
-      {
-        scale: 1,
-        opacity: 0.8,
-        ease: 'power1.inOut',
-        repeat: -1,
+    const context = gsap.context(() => {
+      const timeline = gsap.timeline({ repeat: -1, repeatDelay: 0.6 });
+
+      timeline.from('.box', {
+        scale: 0,
         yoyo: true,
-        duration: animationDuration,
+        repeat: 1,
+        ease: 'power1.inOut',
         stagger: {
-          each: 0.015,
+          amount: 1.5,
+          grid: [numColumns, numRows],
+          axis: 'x',
+          ease: 'back.out(1.7)',
           from: 'center',
         },
-      }
-    );
-  }, [animationDuration, rows, cols]);
+      });
+
+      timeline.to('.box', {
+        yoyo: true,
+        scale: 1,
+        repeat: 1,
+        ease: 'power1.inOut',
+        stagger: {
+          amount: 1.5,
+          grid: [numColumns, numRows],
+          axis: 'y',
+          ease: 'back.out(1.7)',
+          from: 'center',
+        },
+      });
+    }, containerRef);
+
+    return () => context.revert();
+  }, [numColumns, numRows]);
 
   return (
-<div className="relative w-full h-full bg-black overflow-hidden">      
-  <div className="absolute inset-0 z-2" style={{
-    background: 'radial-gradient(circle at center, transparent 5%, black 100%)'
-  }} />
+    <div
+      ref={containerRef}
+      aria-hidden
+      style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 0, // keep visible by default
+        backgroundColor: 'black',
+        overflow: 'hidden',
+        pointerEvents: 'none',
+        userSelect: 'none',
+      }}
+    >
       <div
-        className="relative z-1 h-full w-full grid"
         style={{
-          gridTemplateColumns: `repeat(${cols}, 1fr)`,
-          gridTemplateRows: `repeat(${rows}, 1fr)`,
+          position: 'absolute',
+          inset: 0,
+          background: 'radial-gradient(circle at center, transparent 5%, black 100%)',
+        }}
+      />
+      <div
+        style={{
+          position: 'relative',
+          width: '100%',
+          height: '100%',
+          display: 'grid',
+          gridTemplateColumns: `repeat(${numColumns}, minmax(0, 1fr))`,
+          gridTemplateRows: `repeat(${numRows}, minmax(0, 1fr))`,
         }}
       >
-        {Array(rows * cols).fill(0).map((_, i) => (
+        {Array.from({ length: totalDots }).map((_, i) => (
           <div
             key={i}
-            className={`fading-box rounded-full ${dotColor}`}
-            style={{ width: dotSize, height: dotSize }}
+            className="box"
+            style={{
+              width: 8,
+              height: 8,
+              backgroundColor: 'rgba(255,255,255,0.5)',
+              borderRadius: 9999,
+              justifySelf: 'center',
+              alignSelf: 'center',
+            }}
           />
         ))}
       </div>
@@ -62,3 +98,5 @@ export const FadingBG: React.FC<FadingBGProps> = ({
 };
 
 FadingBG.displayName = 'FadingBG';
+
+export default FadingBG;

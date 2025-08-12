@@ -32,4 +32,4 @@ const useFetch = (url: string) => {
   return { data, loading, error };
 }
 
-export { useFetch }
+export { useFetch };

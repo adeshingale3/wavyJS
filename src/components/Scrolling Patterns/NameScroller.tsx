@@ -233,4 +233,6 @@ const NameScroller: React.FC<NameScrollerProps> = ({
   );
 };
 
+NameScroller.displayName = 'NameScroller';
+
 export default NameScroller;

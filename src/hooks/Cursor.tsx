@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useCursor= () =>{
+const useCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -16,4 +16,5 @@ const useCursor= () =>{
 
   return position;
 }
-export {useCursor};
+
+export { useCursor };

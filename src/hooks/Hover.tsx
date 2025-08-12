@@ -11,4 +11,4 @@ const useHover = () => {
   return [isHovered, eventHandlers] as const;
 }
 
-export {useHover}
+export { useHover };

@@ -23,7 +23,7 @@ const useSpeechSynthesis = () => {
   return { speak, stop };
 }
 
-export {useSpeechSynthesis}
+export { useSpeechSynthesis };
 
 
 

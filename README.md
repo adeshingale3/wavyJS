@@ -1,142 +1,273 @@
-# NameScroller Component
+# WavyJS - React UI Components & Hooks Library
 
-A dynamic, animated text scroller component built with React, TypeScript, and GSAP. Perfect for creating engaging background animations with customizable text, colors, and effects.
+A comprehensive React + TypeScript component and hooks library with Tailwind CSS, Framer Motion, and GSAP animations.
 
-## Features
+## 🚀 Features
 
-- 🎯 **Dynamic Text**: Customize the scrolling text content
-- 🎨 **Customizable Colors**: Set text color and shadow color
-- 🌟 **Shadow Effects**: Choose from multiple shadow sizes
-- ⚡ **Performance Optimized**: Uses GSAP for smooth animations
-- 📱 **Responsive**: Works on all screen sizes
-- 🔧 **TypeScript Support**: Full type safety with exported interfaces
+- **UI Components**: Beautiful, customizable components including buttons and animated backgrounds
+- **Custom Hooks**: Useful React hooks for common functionality
+- **Animation Ready**: Built with GSAP and Framer Motion for smooth animations
+- **TypeScript**: Full TypeScript support with proper type definitions
+- **Tailwind CSS**: Modern utility-first CSS framework
+- **Zero Dependencies**: Only peer dependencies, no bundle bloat
 
-## Installation
+## 📦 Installation
 
 ```bash
-npm install your-package-name
-# or
-yarn add your-package-name
+npm install wavyjs
 ```
 
-## Usage
+## 🔧 Peer Dependencies
 
-### Basic Usage
+Make sure you have these installed in your project:
 
-```tsx
-import { NameScroller } from 'your-package-name';
-
-function App() {
-  return <NameScroller />;
-}
+```bash
+npm install react react-dom framer-motion gsap
 ```
 
-### With Custom Props
+## 🎯 Components
+
+### Button Component
+
+A versatile button component with multiple variants and motion support.
 
 ```tsx
-import { NameScroller } from 'your-package-name';
+import { Button } from 'wavyjs';
 
-function App() {
-  return (
-    <NameScroller
-      title="Your Company Name"
-      textColor="blue-600"
-      shadowSize="lg"
-      shadowColor="blue/50"
-      numberOfRows={8}
-      baseDuration={15}
-    />
-  );
-}
+// Basic usage
+<Button variant="primary">Click me</Button>
+
+// With motion
+<Button variant="secondary" asMotion>Animated Button</Button>
+
+// Available variants: primary, secondary, ghost
 ```
 
-### With Opacity Colors
+**Props:**
+- `variant`: 'primary' | 'secondary' | 'ghost'
+- `asMotion`: boolean - enables Framer Motion animations
+- All standard button HTML attributes
+
+### Background Components
+
+#### FadingBG
+
+Animated dots that fade in and out across the entire screen.
 
 ```tsx
-<NameScroller
-  title="Transparent Text"
-  textColor="white/80"      // White with 80% opacity
-  shadowColor="black/30"    // Black shadow with 30% opacity
-  shadowSize="xl"
+import { FadingBG } from 'wavyjs';
+
+<FadingBG 
+  rows={20}
+  cols={30}
+  dotSize={6}
+  dotColor="bg-white/40"
+  animationDuration={1.5}
 />
 ```
 
-## Color Format Support
+**Props:**
+- `rows`: Number of rows (default: 20)
+- `cols`: Number of columns (default: 30)
+- `dotSize`: Size of dots in pixels (default: 6)
+- `dotColor`: Tailwind color class (default: "bg-white/40")
+- `animationDuration`: Animation duration in seconds (default: 1.5)
 
-The component supports various color formats for both `textColor` and `shadowColor`:
+#### GithubBG
 
-- **Basic colors**: `"red"`, `"blue"`, `"green"`, etc.
-- **Tailwind scale colors**: `"blue-600"`, `"red-500"`, `"gray-400"`, etc.
-- **Opacity colors**: `"white/30"`, `"black/50"`, `"blue/80"`, etc.
-- **Hex colors**: `"#ff0000"`, `"#0000ff"`, etc.
-- **RGB colors**: `"rgb(255, 0, 0)"`, `"rgba(0, 0, 255, 0.5)"`, etc.
+Matrix-style animated background with blinking boxes.
 
-## Props
-
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `title` | `string` | `"WAVY JS"` | The text to display in the scroller |
-| `shadowSize` | `"sm" \| "md" \| "lg" \| "xl" \| "2xl"` | `"lg"` | Size of the text shadow |
-| `shadowColor` | `string` | `"white/80"` | Color of the text shadow (supports formats like "white/30", "blue-600", "red", etc.) |
-| `textColor` | `string` | `"black/30"` | Color of the text (supports formats like "black/30", "blue-600", "red", etc.) |
-| `numberOfRows` | `number` | `6` | Number of scrolling rows |
-| `baseDuration` | `number` | `12` | Base animation duration in seconds |
-| `className` | `string` | `""` | Additional CSS classes |
-
-## Examples
-
-### Company Branding
 ```tsx
-<NameScroller
-  title="ACME Corp"
-  textColor="white"
-  shadowSize="xl"
-  shadowColor="blue-600"
-  numberOfRows={4}
+import { GithubBG } from 'wavyjs';
+
+<GithubBG />
+```
+
+#### AnimatedBG
+
+Floating colored circles with smooth animations.
+
+```tsx
+import { AnimatedBG } from 'wavyjs';
+
+<AnimatedBG />
+```
+
+#### MaskedBG
+
+Advanced masked background with animated grid patterns.
+
+```tsx
+import { MaskedBG } from 'wavyjs';
+
+<MaskedBG />
+```
+
+#### NameScroller
+
+Horizontal scrolling text with customizable shadows and colors.
+
+```tsx
+import { NameScroller } from 'wavyjs';
+
+<NameScroller 
+  title="WAVY JS"
+  shadowSize="lg"
+  shadowColor="white/80"
+  textColor="black/30"
+  numberOfRows={6}
+  baseDuration={12}
 />
 ```
 
-### Event Promotion
+**Props:**
+- `title`: Text to display (default: "WAVY JS")
+- `shadowSize`: Shadow size - 'sm' | 'md' | 'lg' | 'xl' | '2xl' (default: "lg")
+- `shadowColor`: Shadow color with opacity (default: "white/80")
+- `textColor`: Text color with opacity (default: "black/30")
+- `numberOfRows`: Number of scrolling rows (default: 6)
+- `baseDuration`: Base animation duration in seconds (default: 12)
+- `className`: Additional CSS classes
+
+## 🪝 Hooks
+
+### useCursor
+
+Track mouse cursor position.
+
 ```tsx
-<NameScroller
-  title="Tech Conference 2024"
-  textColor="yellow"
-  shadowSize="2xl"
-  shadowColor="orange-500"
-  numberOfRows={8}
-  baseDuration={20}
-/>
+import { useCursor } from 'wavyjs';
+
+const { x, y } = useCursor();
 ```
 
-### Minimal Style
+### useFetch
+
+Simplified data fetching hook.
+
 ```tsx
-<NameScroller
-  title="Minimal"
-  textColor="gray-400"
-  shadowSize="sm"
-  shadowColor="white/20"
-  numberOfRows={3}
-  baseDuration={8}
-/>
+import { useFetch } from 'wavyjs';
+
+const { data, loading, error } = useFetch('https://api.example.com/data');
 ```
 
-## Dependencies
+### useHover
 
-- React 16.8+
-- GSAP
-- Tailwind CSS (for styling)
+Track hover state with event handlers.
 
-## Browser Support
+```tsx
+import { useHover } from 'wavyjs';
 
-- Chrome 60+
-- Firefox 55+
-- Safari 12+
-- Edge 79+
+const [isHovered, eventHandlers] = useHover();
 
-## License
+<div {...eventHandlers}>
+  {isHovered ? 'Hovering!' : 'Not hovering'}
+</div>
+```
 
-MIT License - feel free to use in your projects!
+### useSessionTimeout
 
-## Contributing
+Session timeout management with warning support.
+
+```tsx
+import { useSessionTimeout } from 'wavyjs';
+
+useSessionTimeout({
+  timeout: 300000, // 5 minutes
+  onTimeout: () => logout(),
+  warningTime: 60000, // 1 minute warning
+  onWarning: () => showWarning(),
+});
+```
+
+### useSpeechSynthesis
+
+Text-to-speech functionality.
+
+```tsx
+import { useSpeechSynthesis } from 'wavyjs';
+
+const { speak, stop } = useSpeechSynthesis();
+
+speak('Hello, world!', { rate: 0.8, pitch: 1.2 });
+stop(); // Stop current speech
+```
+
+### useToggle
+
+Simple boolean toggle hook.
+
+```tsx
+import { useToggle } from 'wavyjs';
+
+const [isOpen, toggle] = useToggle(false);
+
+<button onClick={toggle}>
+  {isOpen ? 'Close' : 'Open'}
+</button>
+```
+
+## 🎨 Styling
+
+All components use Tailwind CSS classes and are fully customizable. You can override styles by passing `className` props or modifying the component source.
+
+## 📱 Responsive Design
+
+Components are built with responsive design in mind and work seamlessly across all device sizes.
+
+## 🔄 Animation
+
+- **GSAP**: Used for complex animations and timeline control
+- **Framer Motion**: Provides smooth component transitions and motion
+- **CSS Transitions**: Fallback animations for better performance
+
+## 🚀 Getting Started
+
+1. **Install the package:**
+   ```bash
+   npm install wavyjs
+   ```
+
+2. **Import components:**
+   ```tsx
+   import { Button, FadingBG, useCursor } from 'wavyjs';
+   ```
+
+3. **Use in your app:**
+   ```tsx
+   function App() {
+     const { x, y } = useCursor();
+     
+     return (
+       <div>
+         <FadingBG />
+         <Button variant="primary">Hello WavyJS!</Button>
+         <p>Cursor: {x}, {y}</p>
+       </div>
+     );
+   }
+   ```
+
+## 📋 Requirements
+
+- React 18.2.0+
+- React DOM 18.2.0+
+- Framer Motion 11.0.0+
+- GSAP 3.12.0+
+- Node.js 18+
+
+## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🆘 Support
+
+If you encounter any issues or have questions, please open an issue on GitHub.
+
+---
+
+Built with ❤️ by Adesh Ingale
