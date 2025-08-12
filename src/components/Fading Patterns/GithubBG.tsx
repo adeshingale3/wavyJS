@@ -60,14 +60,48 @@ const GithubBG: React.FC = () => {
     }
     
     return (
-        <div className='relative w-full h-full bg-black overflow-hidden'>
-            <div className='absolute z-2 h-full w-full' style={{
-                background: 'radial-gradient(circle at center, black 80%, transparent 100%)'
-            }} />
-            <div className='absolute z-1 h-full w-full grid grid-cols-[repeat(auto-fill,minmax(1rem,1fr))] gap-2 py-6 px-6 bottom-2'>
+        <div
+            aria-hidden
+            style={{
+                position: 'fixed',
+                inset: 0,
+                zIndex: 0,
+                backgroundColor: 'black',
+                overflow: 'hidden',
+                pointerEvents: 'none',
+                userSelect: 'none',
+            }}
+        >
+            <div
+                style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'radial-gradient(circle at center, black 80%, transparent 100%)',
+                }}
+            />
+            <div
+                style={{
+                    position: 'absolute',
+                    inset: 0,
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(16px, 1fr))',
+                    gap: 8,
+                    padding: 24,
+                    alignContent: 'end',
+                }}
+            >
                 {Array.from({ length: boxCount }).map((_, i) => (
-                    <div key={i} style={{ backgroundColor: getRandomColor() }}
-                        ref={(el) => (boxRefs.current[i] = el)} className="box w-4 h-4 rounded-md" />
+                    <div
+                        key={i}
+                        ref={(el) => (boxRefs.current[i] = el)}
+                        className="box"
+                        style={{
+                            width: 16,
+                            height: 16,
+                            backgroundColor: getRandomColor(),
+                            borderRadius: 6,
+                        }}
+                    />
                 ))}
             </div>
         </div>

@@ -108,13 +108,23 @@ const MaskedBG: React.FC = () => {
     }, []);
 
     return (
-        <div id="masked-bg-container" className='relative w-full h-full overflow-hidden'>
+        <div
+            id="masked-bg-container"
+            aria-hidden
+            style={{
+                position: 'fixed',
+                inset: 0,
+                zIndex: 0,
+                overflow: 'hidden',
+                pointerEvents: 'none',
+                userSelect: 'none',
+            }}
+        >
             <style dangerouslySetInnerHTML={{
                 __html: `
                     .background {
-                        position: relative;
-                        width: 100%;
-                        height: 100%;
+                        position: absolute;
+                        inset: 0;
                         background: black;
                     }
                     .background::before {
@@ -146,37 +156,49 @@ const MaskedBG: React.FC = () => {
                     }
                 `
             }} />
-            <div className="relative w-full h-full overflow-hidden z-0">
+            <div style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden', zIndex: 0 }}>
                 {/* Black background */}
-                <div className="background absolute inset-0 bg-black" />
+                <div className="background" />
 
                 {/* Circle masks */}
-                <div id="circle1" className="absolute w-[300px] h-[300px] rounded-full"
+                <div id="circle1" className="absolute"
                     style={{
+                        width: 300,
+                        height: 300,
+                        borderRadius: 9999,
                         left: '10%',
                         top: '80%',
                         transform: 'translate(-50%, -50%)',
                         filter: 'blur(20px)',
                     }}
                 />
-                <div id="circle2" className="absolute w-[300px] h-[300px] rounded-full"
+                <div id="circle2" className="absolute"
                     style={{
+                        width: 300,
+                        height: 300,
+                        borderRadius: 9999,
                         left: '80%',
                         top: '90%',
                         transform: 'translate(-50%, -50%)',
                         filter: 'blur(20px)',
                     }}
                 />
-                <div id="circle3" className="absolute w-[300px] h-[300px] rounded-full"
+                <div id="circle3" className="absolute"
                     style={{
+                        width: 300,
+                        height: 300,
+                        borderRadius: 9999,
                         left: '40%',
                         top: '95%',
                         transform: 'translate(-50%, -50%)',
                         filter: 'blur(20px)',
                     }}
                 />
-                <div id="circle4" className="absolute w-[300px] h-[300px] rounded-full"
+                <div id="circle4" className="absolute"
                     style={{
+                        width: 300,
+                        height: 300,
+                        borderRadius: 9999,
                         left: '60%',
                         top: '80%',
                         transform: 'translate(-50%, -50%)',
@@ -185,10 +207,13 @@ const MaskedBG: React.FC = () => {
                 />
 
                 {/* Masked grid layer */}
-                <div className="absolute inset-0">
+                <div style={{ position: 'absolute', inset: 0 }}>
                     {/* Grid columns */}
-                    <div className="absolute inset-0 flex"
-                        style={{  
+                    <div
+                        style={{
+                            position: 'absolute',
+                            inset: 0,
+                            display: 'flex',
                             WebkitMaskImage: `
                                 radial-gradient(
                                     circle 400px at var(--circle1-x, 20%) var(--circle1-y, 40%),
@@ -218,10 +243,7 @@ const MaskedBG: React.FC = () => {
                         {Array.from({ length: 24 }).map((_, i) => (
                             <div
                                 key={i}
-                                className="flex-1"
-                                style={{
-                                    backgroundColor: '#3b82f6'
-                                }}
+                                style={{ flex: 1, backgroundColor: '#3b82f6' }}
                             />
                         ))}
                     </div>

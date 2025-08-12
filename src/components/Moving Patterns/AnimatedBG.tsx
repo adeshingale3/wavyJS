@@ -39,27 +39,90 @@ export const AnimatedBG: React.FC = () => {
     }, [])
     
     return (
-        <div className='w-full h-full bg-black overflow-hidden relative'>
-            <div className="relative w-full h-full">
-                <div className="green absolute bg-green-500/40 rounded-full 
-                    w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 
-                    left-[10%] top-[2%]"/>
-                <div className="green absolute bg-blue-500/40 rounded-full 
-                    w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 
-                    left-[10%] top-[60%]"/>
-                
-                <div className="red absolute bg-red-500/40 rounded-full 
-                    w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 
-                    left-[60%] top-[2%]"/>
-                
-                <div className="pink absolute bg-pink-500/40 rounded-full 
-                    w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 
-                    left-[40%] top-[50%]"/>
-                <div className="pink absolute bg-yellow-500/40 rounded-full 
-                    w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 
-                    left-[80%] top-[40%]"/>
-                
-                <div className="absolute w-full h-full bg-black/30 backdrop-blur-2xl"/>
+        <div
+            aria-hidden
+            style={{
+                position: 'fixed',
+                inset: 0,
+                zIndex: 0,
+                backgroundColor: 'black',
+                overflow: 'hidden',
+                pointerEvents: 'none',
+                userSelect: 'none',
+            }}
+        >
+            <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+                <div
+                    className="green"
+                    style={{
+                        position: 'absolute',
+                        backgroundColor: 'rgba(34, 197, 94, 0.4)',
+                        borderRadius: 9999,
+                        width: 128,
+                        height: 128,
+                        left: '10%',
+                        top: '2%'
+                    }}
+                />
+                <div
+                    className="green"
+                    style={{
+                        position: 'absolute',
+                        backgroundColor: 'rgba(59, 130, 246, 0.4)',
+                        borderRadius: 9999,
+                        width: 128,
+                        height: 128,
+                        left: '10%',
+                        top: '60%'
+                    }}
+                />
+
+                <div
+                    className="red"
+                    style={{
+                        position: 'absolute',
+                        backgroundColor: 'rgba(239, 68, 68, 0.4)',
+                        borderRadius: 9999,
+                        width: 128,
+                        height: 128,
+                        left: '60%',
+                        top: '2%'
+                    }}
+                />
+
+                <div
+                    className="pink"
+                    style={{
+                        position: 'absolute',
+                        backgroundColor: 'rgba(236, 72, 153, 0.4)',
+                        borderRadius: 9999,
+                        width: 128,
+                        height: 128,
+                        left: '40%',
+                        top: '50%'
+                    }}
+                />
+                <div
+                    className="pink"
+                    style={{
+                        position: 'absolute',
+                        backgroundColor: 'rgba(234, 179, 8, 0.4)',
+                        borderRadius: 9999,
+                        width: 128,
+                        height: 128,
+                        left: '80%',
+                        top: '40%'
+                    }}
+                />
+
+                <div
+                    style={{
+                        position: 'absolute',
+                        inset: 0,
+                        backgroundColor: 'rgba(0,0,0,0.3)',
+                        backdropFilter: 'blur(24px)'
+                    }}
+                />
             </div>
         </div>
     )
