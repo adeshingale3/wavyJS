@@ -50,7 +50,7 @@ export const FadingBG: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      aria-hidden
+      
       style={{
         width: '100%',
         height: '100%',
@@ -61,13 +61,13 @@ export const FadingBG: React.FC = () => {
         userSelect: 'none',
       }}
     >
-      <div
+      {/* <div
         style={{
           position: 'absolute',
           inset: 0,
           background: 'radial-gradient(circle at center, transparent 5%, black 100%)',
         }}
-      />
+      /> */}
       <div
         style={{
           position: 'relative',
