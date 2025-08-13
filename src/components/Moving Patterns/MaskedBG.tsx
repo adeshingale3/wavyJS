@@ -112,8 +112,8 @@ const MaskedBG: React.FC = () => {
             id="masked-bg-container"
             aria-hidden
             style={{
-                position: 'fixed',
-                inset: 0,
+                height: '100%',
+                width: '100%',
                 zIndex: 0,
                 overflow: 'hidden',
                 pointerEvents: 'none',

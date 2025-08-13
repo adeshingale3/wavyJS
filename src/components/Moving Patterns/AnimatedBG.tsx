@@ -42,8 +42,8 @@ export const AnimatedBG: React.FC = () => {
         <div
             aria-hidden
             style={{
-                position: 'fixed',
-                inset: 0,
+                height: '100%',
+                width:'100%',
                 zIndex: 0,
                 backgroundColor: 'black',
                 overflow: 'hidden',

@@ -52,8 +52,8 @@ export const FadingBG: React.FC = () => {
       ref={containerRef}
       aria-hidden
       style={{
-        position: 'fixed',
-        inset: 0,
+        width: '100%',
+        height: '100%',
         zIndex: 0, // keep visible by default
         backgroundColor: 'black',
         overflow: 'hidden',
