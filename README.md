@@ -4,7 +4,7 @@ A comprehensive React + TypeScript component and hooks library with Tailwind CSS
 
 ## 🚀 Features
 
-- **UI Components**: Beautiful, customizable components including buttons and animated backgrounds
+- **UI Components**: Beautiful, customizable components including buttons and animated backgrounds, Icons
 - **Custom Hooks**: Useful React hooks for common functionality
 - **Animation Ready**: Built with GSAP and Framer Motion for smooth animations
 - **TypeScript**: Full TypeScript support with proper type definitions
@@ -27,27 +27,6 @@ npm install react react-dom framer-motion gsap
 
 ## 🎯 Components
 
-### Button Component
-
-A versatile button component with multiple variants and motion support.
-
-```tsx
-import { Button } from 'wavyjs';
-
-// Basic usage
-<Button variant="primary">Click me</Button>
-
-// With motion
-<Button variant="secondary" asMotion>Animated Button</Button>
-
-// Available variants: primary, secondary, ghost
-```
-
-**Props:**
-- `variant`: 'primary' | 'secondary' | 'ghost'
-- `asMotion`: boolean - enables Framer Motion animations
-- All standard button HTML attributes
-
 ### Background Components
 
 #### FadingBG
@@ -57,21 +36,8 @@ Animated dots that fade in and out across the entire screen.
 ```tsx
 import { FadingBG } from 'wavyjs';
 
-<FadingBG 
-  rows={20}
-  cols={30}
-  dotSize={6}
-  dotColor="bg-white/40"
-  animationDuration={1.5}
-/>
+<FadingBG />
 ```
-
-**Props:**
-- `rows`: Number of rows (default: 20)
-- `cols`: Number of columns (default: 30)
-- `dotSize`: Size of dots in pixels (default: 6)
-- `dotColor`: Tailwind color class (default: "bg-white/40")
-- `animationDuration`: Animation duration in seconds (default: 1.5)
 
 #### GithubBG
 
@@ -103,31 +69,30 @@ import { MaskedBG } from 'wavyjs';
 <MaskedBG />
 ```
 
-#### NameScroller
+#### Icons
 
-Horizontal scrolling text with customizable shadows and colors.
+Animated React logo with customizable size and color, featuring rotating ellipses and a moving circle.
 
 ```tsx
-import { NameScroller } from 'wavyjs';
+import { ReactIcon } from 'wavyjs';
 
-<NameScroller 
-  title="WAVY JS"
-  shadowSize="lg"
-  shadowColor="white/80"
-  textColor="black/30"
-  numberOfRows={6}
-  baseDuration={12}
+// Basic usage
+<ReactIcon />
+
+// Custom size and color
+<ReactIcon size={300} color="#ff6b6b" />
+
+// Available props
+<ReactIcon 
+  size={200}     // Default: 200
+  color="cyan"   // Default: "cyan"
 />
 ```
 
 **Props:**
-- `title`: Text to display (default: "WAVY JS")
-- `shadowSize`: Shadow size - 'sm' | 'md' | 'lg' | 'xl' | '2xl' (default: "lg")
-- `shadowColor`: Shadow color with opacity (default: "white/80")
-- `textColor`: Text color with opacity (default: "black/30")
-- `numberOfRows`: Number of scrolling rows (default: 6)
-- `baseDuration`: Base animation duration in seconds (default: 12)
-- `className`: Additional CSS classes
+- `size`: number - Icon size in pixels (default: 200)
+- `color`: string - Color for both the logo ellipses and moving circle (default: "cyan")
+
 
 ## 🪝 Hooks
 

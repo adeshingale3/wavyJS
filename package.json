@@ -62,6 +62,8 @@
     "vite",
     "wavyjs",
     "wavyJS",
-    "wavy"
+    "wavy",
+    "icons",
+    "react-icon"
   ]
 }
