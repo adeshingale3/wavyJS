@@ -6,11 +6,13 @@ import React, { useEffect, useRef } from "react";
 interface JavaScriptIconProps {
   size?: number;
   color?: string;
+  className?: string;
 }
 
 const JavaScriptIcon: React.FC<JavaScriptIconProps> = ({ 
   size = 200, 
-  color = "#f7df1e" 
+  color = "#f7df1e",
+  className
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
 
@@ -21,7 +23,9 @@ const JavaScriptIcon: React.FC<JavaScriptIconProps> = ({
       viewBox="0 0 630 630"
       width={size}
       height={size}
-      className="js-svg"
+      preserveAspectRatio="xMidYMid meet"
+      className={["js-svg", className].filter(Boolean).join(" ")}
+      style={{ width: "100%", height: "auto", maxWidth: size }}
       overflow="visible"
     >
       {/* Base JS square with soft glow */}

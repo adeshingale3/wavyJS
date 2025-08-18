@@ -6,11 +6,13 @@ import gsap from "gsap";
 interface ReactIconProps {
   size?: number;
   color?: string;
+  className?: string;
 }
 
 const ReactIcon: React.FC<ReactIconProps> = ({ 
   size = 200, 
-  color = "cyan" 
+  color = "cyan",
+  className
 }) => {
     const svgRef = useRef<SVGSVGElement>(null);
 
@@ -32,7 +34,9 @@ const ReactIcon: React.FC<ReactIconProps> = ({
       width={size}
       height={size}
       fill="none"
-      className="svg"
+      preserveAspectRatio="xMidYMid meet"
+      className={["svg", className].filter(Boolean).join(" ")}
+      style={{ width: "100%", height: "auto", maxWidth: size }}
     >
       {/* Base React logo (3 ellipses) with softer glow */}
       <g

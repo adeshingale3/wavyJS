@@ -4,11 +4,13 @@ import { motion } from "framer-motion";
 interface ReactCardIconProps {
   size?: number;
   color?: string;
+  classname?:string;
 }
 
 const ReactCardIcon: React.FC<ReactCardIconProps> = ({ 
   size = 200, 
-  color = "#00FFFF" 
+  color = "#00FFFF", 
+  classname
 }) => {
     // Calculate card dimensions based on size prop
     const cardWidth = size * 0.3; // 30% of the size
@@ -29,7 +31,7 @@ const ReactCardIcon: React.FC<ReactCardIconProps> = ({
 
     return (
         <motion.div
-            className="relative"
+            className={["relative", classname].filter(Boolean).join(" ")}
             animate={{ rotateY: 360 }}
             transition={{
                 duration: 6,
@@ -58,14 +60,14 @@ const ReactCardIcon: React.FC<ReactCardIconProps> = ({
                 ></div> */}
 
                 {/* Card content */}
-                <div className="relative inset-0 h-full flex items-center justify-center">
+                <div style={{height: cardHeight, width: cardWidth}} className="relative inset-0 h-full flex items-center justify-center">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 841.9 595.3"
                         width={logoSize}
                         height={logoSize}
                         fill="none"
-                        className="svg"
+                        className="svg "
                         
                         
                     >
