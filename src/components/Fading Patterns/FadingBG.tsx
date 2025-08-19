@@ -83,8 +83,8 @@ export const FadingBG: React.FC = () => {
             key={i}
             className="box"
             style={{
-              width: 8,
-              height: 8,
+              width: 2,
+              height: 2,
               backgroundColor: 'rgba(255,255,255,0.5)',
               borderRadius: 9999,
               justifySelf: 'center',
