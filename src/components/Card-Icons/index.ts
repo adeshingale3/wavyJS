@@ -5,5 +5,6 @@ export {default as TailwindCardIcon} from './TailwindCardIcon';
 export {default as HtmlCardIcon} from './HtmlCardIcon' 
 export {default as CssCardIcon} from './CSSCardIcon'
 export {default as FlutterCardIcon} from './FlutterCardIcon'
+export {default as PythonCardIcon} from './PythonCardIcon'
 
 
