@@ -62,7 +62,7 @@ const DartCardIcon: React.FC<DartCardIconProps> = ({
             <rect
               width="502.87"
               height="502.87"
-              
+              fill="none"
               filter="url(#glowSoft)"
               rx="32"
             />
