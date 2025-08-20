@@ -7,5 +7,6 @@ export {default as CssCardIcon} from './CSSCardIcon'
 export {default as FlutterCardIcon} from './FlutterCardIcon'
 export {default as PythonCardIcon} from './PythonCardIcon'
 export {default as GithubCardIcon} from './GithubCardIcon'
+export {default as DartCardIcon} from './DartCardIcon'
 
 
