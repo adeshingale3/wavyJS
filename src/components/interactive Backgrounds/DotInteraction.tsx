@@ -116,26 +116,25 @@ export default function InteractiveDotGrid({
     const canvas = canvasRef.current
     if (!canvas) return
   
-    const width = window.innerWidth
-    const height = window.innerHeight
+    const parent = canvas.parentElement
+    if (!parent) return
   
-    // CSS size
-    canvas.style.width = `${width}px`
-    canvas.style.height = `${height}px`
+    const width = parent.clientWidth
+    const height = parent.clientHeight
   
-    // Pixel size
     canvas.width = width * window.devicePixelRatio
     canvas.height = height * window.devicePixelRatio
   
     const ctx = canvas.getContext("2d")
     if (ctx) {
-      ctx.setTransform(1, 0, 0, 1, 0, 0) // reset scaling
+      ctx.setTransform(1, 0, 0, 1, 0, 0) // reset transform
       ctx.scale(window.devicePixelRatio, window.devicePixelRatio)
     }
   
     setDimensions({ width, height })
     initializeDots(width, height)
   }
+  
   
 
   useEffect(() => {
@@ -161,11 +160,10 @@ export default function InteractiveDotGrid({
   return (
     <canvas
       ref={canvasRef}
-      className={`fixed ${className}`}
+      className={`fixed w-full h-full ${className}`}
       style={{
         background: "#000000",
-        width: '100%',
-        height: '100%',
+        
         zIndex: 0,
         overflow: "hidden",
         position: "relative"
