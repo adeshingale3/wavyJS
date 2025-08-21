@@ -17,5 +17,6 @@ export * from './components/Scrolling Patterns';
 export * from './components/Moving Patterns';
 export * from './components/Icons';
 export * from './components/Card-Icons';
+export * from './components/interactive Backgrounds'
 
 
