@@ -18,5 +18,6 @@ export * from './components/Moving Patterns';
 export * from './components/Icons';
 export * from './components/Card-Icons';
 export * from './components/interactive Backgrounds'
+export * from './components/Normal Backgrounds'
 
 
