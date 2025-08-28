@@ -5,4 +5,4 @@ export {default as AnimatedDIamond} from './AnimatedDiamondsBG'
 export {default as AnimatedLine} from './AnimatedLinesBG'
 export {default as AnimatedChevron} from './AnimatedChevronBG'
 
-
+export {default as GeometricShapesBG} from './GeometricShapesBG'
