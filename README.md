@@ -1,6 +1,7 @@
 # WavyJS - React UI Components & Hooks Library
 
 A comprehensive React + TypeScript component and hooks library with Tailwind CSS, Framer Motion, and GSAP animations.
+DOCS[https://wavyjs.vercel.app/]
 
 ## 🚀 Features
 
