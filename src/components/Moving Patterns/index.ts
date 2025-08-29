@@ -7,3 +7,4 @@ export {default as AnimatedChevron} from './AnimatedChevronBG'
 
 export {default as GeometricShapesBG} from './GeometricShapesBG'
 export {default as AnimatedBusiness} from './AnimatedBusinessBG'
+export {default as AnimatedGradient} from './AnimatedGradientBG'
