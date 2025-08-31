@@ -1,6 +1,6 @@
 {
   "name": "wavyjs",
-  "version": "0.1.20",
+  "version": "0.1.22",
   "description": "Reusable React + TypeScript component and hooks library with Tailwind, Framer Motion, and GSAP.",
   "license": "MIT",
   "author": "Adesh Ingale",
@@ -69,6 +69,7 @@
   "dependencies": {
     "clsx": "^2.1.1",
     "lucide-react": "^0.541.0",
+    "react-icons": "^5.5.0",
     "tailwind-merge": "^3.3.1"
   }
 }
